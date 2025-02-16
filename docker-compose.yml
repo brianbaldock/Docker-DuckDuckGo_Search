@@ -1,0 +1,8 @@
+﻿  # Search service
+  # Custom container running FastAPI and DuckDuckGo Search
+  ddgs-service:
+    image: ddgs-service:latest
+    ports:
+      - "8082:8000"
+    container_name: ddgs
+    restart: always
