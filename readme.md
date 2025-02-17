@@ -112,7 +112,7 @@ GET http://localhost:8082/search?query=Microsoft&max_results=3
 
 ## Notes and Limitations
 
-- This service adds a random delay (1.5–3.5 seconds) to help avoid potential rate limiting from DuckDuckGo.
+- This service adds a random delay (1.5–3.5 seconds).
 - For repeated searches, an in-memory LRU cache is used (`@lru_cache`) to reduce duplicate requests.
 - Only the last 100 unique searches are cached.
 - `max_results` is limited to a maximum of **5** to keep responses concise.
@@ -127,3 +127,6 @@ GET http://localhost:8082/search?query=Microsoft&max_results=3
 4. Open a pull request.
 
 Feel free to open an issue if you run into any problems or have questions.
+
+## Disclaimer
+This docker instance is not affiliated with DuckDuckGo and is for educational purposes only. It is not intended for commercial use or any purpose that violates DuckDuckGo's Terms of Service. By using this docker container, you acknowledge that you will not use it in a way that infringes on DuckDuckGo's terms. The official DuckDuckGo website can be found at https://duckduckgo.com.

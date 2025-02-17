@@ -18,9 +18,9 @@ def cached_search(query: str, max_results: int):
     Cached DuckDuckGo search function with rate-limit protection.
     """
     try:
-        time.sleep(random.uniform(1.5, 3.5))  # Random delay to avoid rate limiting
+        time.sleep(random.uniform(1.5, 3.5))  # Random delay
 
-        # Remove spaces from multi-word queries to avoid triggering DuckDuckGo rate limits
+        # Remove spaces from multi-word queries to avoid issues
         modified_query = query.replace(" ", "")
 
         with DDGS() as ddgs:
@@ -34,7 +34,7 @@ def cached_search(query: str, max_results: int):
 @app.get("/search")
 def search_duckduckgo(query: str = Query(..., title="Search Query"), max_results: int = 5):
     """
-    API endpoint for searching DuckDuckGo with rate-limit protection using the duckduckgo_search python libray (https://github.com/deedy5/duckduckgo_search)
+    API endpoint for searching DuckDuckGo using the duckduckgo_search python libray (https://github.com/deedy5/duckduckgo_search)
     """
     normalized_query = urllib.parse.unquote(query).replace("+", " ")
 
